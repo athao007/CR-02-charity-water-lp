@@ -6,13 +6,35 @@
     <title>Charity Water Landing Page</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <!-- Add header at the top of the body -->
+  <header>
+    <div class="logo">
+      <img src="img/charitywater_logo_horizontal_BlackText.png" alt="Charity Water logo">
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our Work</a></li>
+        <li><a href="#">Donate</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="cta">Give a Drop</button>
+  </header>
+
     <!-- Hero Section: This is the main banner at the top of the page -->
     <section class="hero">
         <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
+        <h1>A simple drop ripples into a brighter future</h1>
         <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
+        <p>Your gift of clean, sustainable water gives families back time, restores health, and opens doors to education and opportunity—empowering communities to grow, dream big, and live fulfilling lives that you can see through photos and GPS updates.</p>
+
+        <!-- Donate button moved into the hero, directly under the subheadline -->
+        <a href="#" class="donate-button">Create a Ripple</a>
     </section>
 
     <!-- Story Section: This tells the story of the nonprofit -->
@@ -39,9 +61,13 @@
 
     <!-- Call-to-Action Section: This encourages visitors to take action -->
     <section class="call-to-action">
-        <h2>Make a Difference</h2>
+        <h2>Create a Ripple</h2>
         <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
+
+        <!-- Donate button removed from here (moved into the hero).
+             Kept commented so students can restore it if needed. -->
+        <!-- <a href="#" class="donate-button">Give a Drop</a> -->
     </section>
+
 </body>
 </html>

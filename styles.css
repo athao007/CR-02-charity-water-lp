@@ -4,6 +4,17 @@ Primary Colors:
 - Yellow:     #FFC907
 - Blue:       #2E9DF7
 
+Brand Guideline Colors (from Canva Landing Page): 
+- Yellow:                   #ffc907
+- Black:                    #1a1a1a
+- Beige:                    #fff7e1 
+
+- Dark Blue:                #003366
+- Light pink/orange:        #fed8c1
+- Browinish Red/Orange:     #bf6c46
+- Grey:                     #cbccd1
+- Light Blue:               #77a8bb
+
 Secondary Colors:
 - Light Blue: #8BD1CB
 - Green:      #4FCB53
@@ -26,10 +37,10 @@ Fonts:
 /* Set up the main font and background color for the whole page */
 body {
   background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+  font-family: 'Proxima Nova','Avenir', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #222;
+  color: #1a1a1a;
 }
 
 /* Add a slight shadow and rounded corners to each section for depth */
@@ -41,24 +52,70 @@ section {
   padding: 24px 16px;
 }
 
+/* Header styles: simple layout for logo, nav, and CTA button */
+header {
+  background-color: #f5f2e8;            /* soft neutral background */
+  display: flex;                        /* place items in a row */
+  align-items: center;                  /* vertically center items */
+  justify-content: space-between;       /* put space between left and right groups */
+  gap: 16px;                            /* small gap between items */
+  padding: 14px 20px;                   /* space inside the header */
+  position: sticky;                     /* keep header visible on scroll */
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo: keep it a bit larger but preserve aspect ratio */
+.logo img {
+  max-width: 200px; /* increased from 140px so logo is a little bigger */
+  height: auto;     /* preserve aspect ratio */
+  display: block;
+}
+
+/* Simple nav styling */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;   /* space between links */
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+/* CTA button in header */
+.cta {
+  background-color: #ffcc00;
+  color: #1a1a1a;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 /* Hero Section Styles */
 .hero {
   position: relative; /* Needed for overlay */
   /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
+  background-image: url(img/GCA\ Charity\ Water\ Hero\ Img.jpg);
   background-size: cover;      /* Make the image cover the whole area */
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
+  color: #fff7e1;                 /* Beige text for contrast */
+  text-align:center;          /* Center the text */
   padding: 60px 20px;          /* Add space above and below */
   border-radius: 0 0 16px 16px; /* Only round bottom corners */
 
-  /* Add a dark overlay for better text readability */
+}
+ /* Add a dark overlay for better text readability */
   /* This uses a simple linear-gradient overlay */
   background-blend-mode: darken;
   background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
-}
 
 /* Make the headline bold and modern */
 .hero h1 {
@@ -79,7 +136,7 @@ section {
 /* Story Section Styles */
 .story {
   background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
+  color: #1a1a1a;
   text-align: center;
   padding: 30px 20px;
 }
@@ -94,7 +151,7 @@ h2 {
 /* Call-to-Action Section Styles */
 .call-to-action {
   background-color: #FFC907; /* Primary Yellow */
-  color: #222;
+  color: #1a1a1a;
   text-align: center;
   padding: 30px 20px;
 }
@@ -111,8 +168,8 @@ h2 {
 /* Donate Button Styles */
 .donate-button {
   display: inline-block;
-  background-color: #4FCB53; /* Green */
-  color: #fff;
+  background-color: #FFC907; /* Primary Yellow */
+  color: #1a1a1a;
   padding: 14px 32px;
   text-decoration: none;
   border-radius: 6px;
@@ -129,6 +186,27 @@ h2 {
 .donate-button:hover {
   background-color: #159A48; /* Dark Green */
   transform: translateY(-2px) scale(1.04); /* Slight lift */
+}
+
+/* When the donate button is inside the hero, center it and ensure contrast */
+.hero .donate-button {
+  display: inline-block;
+  margin-top: 18px;          /* space under the paragraph */
+  background-color: #FFC907; /* yellow matching brand */
+  color: #1a1a1a;               /* dark text for good contrast on yellow */
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
+}
+
+/* Optional: small tweak for mobile so button fits nicely */
+@media (max-width: 600px) {
+  .hero .donate-button {
+    padding: 10px 18px;
+    margin-top: 14px;
+  }
 }
 
 /* Add some spacing between sections */
@@ -176,6 +254,11 @@ section {
   .impact-image {
     width: 90%;    /* Make image take up most of the width */
     max-width: 220px;
+  }
+
+  /* Make the logo smaller on phones so it fits nicely */
+  .logo img {
+    max-width: 140px; /* slightly larger mobile cap than before */
   }
 }
 
