@@ -54,22 +54,25 @@ section {
 
 /* Header styles: simple layout for logo, nav, and CTA button */
 header {
-  background-color: #f5f2e8;            /* soft neutral background */
-  display: flex;                        /* place items in a row */
-  align-items: center;                  /* vertically center items */
-  justify-content: space-between;       /* put space between left and right groups */
-  gap: 16px;                            /* small gap between items */
-  padding: 14px 20px;                   /* space inside the header */
-  position: sticky;                     /* keep header visible on scroll */
+  /* Make header compact and consistent */
+  height: 70px;           /* fixed, smaller header height */
+  padding: 0 24px;        /* left/right padding only */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  position: sticky;
   top: 0;
   z-index: 1000;
+  background-color: #f5f2e8; /* keep the background so it doesn't show hero behind it */
 }
 
 /* Logo: keep it a bit larger but preserve aspect ratio */
 .logo img {
-  max-width: 200px; /* increased from 140px so logo is a little bigger */
-  height: auto;     /* preserve aspect ratio */
+  max-height: 200px; /* increase from 40px so logo is clearer */
+  width: auto;
   display: block;
+  margin-right: auto;      /* Push logo to far left */
 }
 
 /* Simple nav styling */
@@ -87,6 +90,12 @@ nav a {
   font-weight: 500;
 }
 
+/* Navigation positioning */
+nav {
+  margin-right: auto;      /* Push nav to the left after logo */
+  margin-left: 30px;      /* Pull nav slightly left */
+}
+
 /* CTA button in header */
 .cta {
   background-color: #ffcc00;
@@ -96,6 +105,15 @@ nav a {
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
+  /* Add transition for smooth hover effect */
+    transition: all 0.3s ease;
+}
+
+/* CTA button in header hover styles */
+.cta:hover {
+    background-color: #77a8bb;
+    color: #1a1a1a;
+    transform: translateY(-2px) scale(1.04); /* Lifts button up and slightly enlarges it */
 }
 
 /* Hero Section Styles */
@@ -103,19 +121,31 @@ nav a {
   position: relative; /* Needed for overlay */
   /* Set a background image that covers the whole section */
   background-image: url(img/GCA\ Charity\ Water\ Hero\ Img.jpg);
-  background-size: cover;      /* Make the image cover the whole area */
-  background-position: center; /* Center the image */
+  background-size: cover;     /* Make image cover the full area */
+  background-position: 60% 2%;   /* Move image more to the right (increase from center/50%) */
+  min-height: 80vh;          /* Make hero take up most of the screen height */
   background-repeat: no-repeat;
-  color: #fff7e1;                 /* Beige text for contrast */
-  text-align:center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
+  color: #fff7e1;             /* Beige text for contrast */
+  /* Use flexbox so we can place content at the left */
+  display: flex;
+  align-items: center;        /* Vertically center content */
+  justify-content: flex-start;/* Align content to the left */
+  /* Give room on the left so the content doesn't touch the edge */
+  padding: 80px 35% 80px 10%; /* Reduce right padding, increase left padding */
+  margin: 0;
 
 }
- /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
+
+/* Style the hero content box */
+.hero-content {
+  /* Keep content readable and on the left */
+  padding: 28px 20px;             /* Space around text */
+  border-radius: 12px;            /* Rounded corners */
+  max-width: 520px;               /* Limit width so it doesn't stretch too far */
+  color: #fff7e1;                 /* Light text for contrast */
+  margin-left: 0;                 /* No auto-centering - start at the left area */
+  text-align: left;               /* Left-align text inside the box */
+}
 
 /* Make the headline bold and modern */
 .hero h1 {
@@ -165,48 +195,42 @@ h2 {
   box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
 }
 
-/* Donate Button Styles */
+/* Donate Button Styles - Single definition for all donate buttons */
 .donate-button {
-  display: inline-block;
-  background-color: #FFC907; /* Primary Yellow */
-  color: #1a1a1a;
-  padding: 14px 32px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
-  transition: background 0.3s, transform 0.2s;
-  border: none;
-  cursor: pointer;
+    display: inline-block;
+    background-color: #FFC907;
+    color: #1a1a1a;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 18px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    /* Add transition for smooth hover effect */
+    transition: all 0.3s ease;
 }
 
-/* Change button color when hovered */
+/* Hover styles */
 .donate-button:hover {
-  background-color: #159A48; /* Dark Green */
-  transform: translateY(-2px) scale(1.04); /* Slight lift */
+    background-color: #77a8bb;
+    color: #1a1a1a;
+    transform: translateY(-2px) scale(1.04); /* Lifts button up and slightly enlarges it */
 }
 
-/* When the donate button is inside the hero, center it and ensure contrast */
-.hero .donate-button {
-  display: inline-block;
-  margin-top: 18px;          /* space under the paragraph */
-  background-color: #FFC907; /* yellow matching brand */
-  color: #1a1a1a;               /* dark text for good contrast on yellow */
-  padding: 12px 22px;
-  border-radius: 8px;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
+/* Center the donate button while keeping text left-aligned */
+.button-wrap {
+  /* Center inline elements inside this box */
+  text-align: center;
+  /* Small space above the button so it doesn't stick to the paragraph */
+  margin-top: 14px;
 }
 
-/* Optional: small tweak for mobile so button fits nicely */
-@media (max-width: 600px) {
-  .hero .donate-button {
-    padding: 10px 18px;
-    margin-top: 14px;
-  }
+/* Optional: ensure button keeps its natural size and looks like a button */
+.button-wrap .donate-button {
+  display: inline-block; /* keep button sized to its content */
+  /* no margin needed here; wrapper centers it */
 }
 
 /* Add some spacing between sections */
@@ -222,60 +246,94 @@ section {
 
 /* This media query applies styles when the screen is 600px wide or less (like on most phones) */
 @media (max-width: 600px) {
-  /* Make hero section padding smaller on small screens */
+  /* Make hero section padding and text size adjust to smaller screens */
   .hero {
-    padding: 32px 8px;
+    min-height: 60vh;      /* Slightly shorter on mobile */
+    padding: 40px 20px;    /* Simpler padding on mobile */
+    background-position: 65% center;  /* Slightly different position for mobile */
+  }
+
+  /* Ensure buttons are appropriately sized and spaced */
+  .donate-button {
+    padding: 10px 18px;
     font-size: 1em;
   }
 
-  /* Make headline font size smaller so it fits on small screens */
-  .hero h1 {
-    font-size: 1.4em;
+  /* Stack layout for story and call-to-action sections */
+  .story, .call-to-action {
+    padding: 24px 16px;
   }
 
-  /* Make subheadline font size smaller */
-  .hero p {
-    font-size: 1em;
+  /* Make header even smaller on small screens */
+  header {
+    height: 52px;
+    padding: 0 16px;
   }
 
-  /* Make story and call-to-action sections have less padding */
-  .story,
-  .call-to-action,
-  .donation-section {
-    padding: 14px 8px;
-  }
-
-  /* Make impact story image smaller and stack above the text */
-  .impact-content {
-    display: block; /* Stack items vertically */
-    text-align: center;
-  }
-
-  .impact-image {
-    width: 90%;    /* Make image take up most of the width */
-    max-width: 220px;
-  }
-
-  /* Make the logo smaller on phones so it fits nicely */
   .logo img {
-    max-width: 140px; /* slightly larger mobile cap than before */
+    max-height: 32px;
   }
 }
 
-/* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
-@media (min-width: 601px) {
-  /* Show image and text side by side in the impact story */
-  .impact-content {
-    display: flex;           /* Place items in a row */
-    align-items: center;     /* Vertically center items */
-    justify-content: center; /* Center the whole group */
-    gap: 28px;               /* Space between image and text */
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
-  }
+/* 
+  Accessibility Improvements
+  These styles help make the website easier to use for people with disabilities.
+*/
 
-  .impact-image {
-    width: 300px;
-  }
+/* Ensure sufficient color contrast for readability */
+
+/* Links and buttons should have a clear focus state */
+a:focus, .donate-button:focus {
+  outline: 3px solid #FFC907; /* High contrast outline */
+  outline-offset: 2px;
 }
+
+/* Ensure text size is readable on all devices */
+h1, h2, p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem); /* Responsive text size */
+  line-height: 1.4;
+}
+
+/* Make interactive elements easier to use on touch devices */
+button, .donate-button {
+  padding: 12px 20px;
+  font-size: 1rem;
+}
+
+/* Improve form element styling for consistency and ease of use */
+input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 10px;
+  border: 2px solid #cbccd1;
+  border-radius: 8px;
+  margin-top: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Focus styles for form elements */
+input:focus, textarea:focus, select:focus {
+  border-color: #FFC907;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 201, 7, 0.5);
+}
+
+/* 
+  Performance Optimizations
+  These are general best practices to help your CSS perform better.
+*/
+
+/* Minimize the use of large images or complex gradients in favor of solid colors or simple patterns */
+
+/* Use system fonts where possible to reduce load times */
+
+/* Avoid excessive box-shadow or filter effects which can be performance-intensive */
+
+/* Keep CSS rules efficient and avoid unnecessary nesting or complexity */
+
+/* Regularly audit and remove unused CSS rules to keep the stylesheet lean */
+
+/* Consider using CSS variables for commonly used values like colors and fonts for easier maintenance */
+
+/* Use media queries to serve different styles or sizes of images on
