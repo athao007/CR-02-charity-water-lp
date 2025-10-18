@@ -36,7 +36,7 @@ Fonts:
 
 /* Set up the main font and background color for the whole page */
 body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
+  background-color:    #fff7e1 ; /* Soft light blue for a fresh look */
   font-family: 'Proxima Nova','Avenir', Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -46,7 +46,7 @@ body {
 /* Add a slight shadow and rounded corners to each section for depth */
 section {
   background: #fff; /* White background for sections */
-  border-radius: 12px; /* Rounded corners */
+  border-radius: 0px; /* Rounded corners */
   box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
   margin: 24px 10px; /* Space between sections */
   padding: 24px 16px;
@@ -122,7 +122,7 @@ nav {
   /* Set a background image that covers the whole section */
   background-image: url(img/GCA\ Charity\ Water\ Hero\ Img.jpg);
   background-size: cover;     /* Make image cover the full area */
-  background-position: 60% 2%;   /* Move image more to the right (increase from center/50%) */
+  background-position: 65% 2%;   /* Move image more to the right (increase from center/50%) */
   min-height: 80vh;          /* Make hero take up most of the screen height */
   background-repeat: no-repeat;
   color: #fff7e1;             /* Beige text for contrast */
@@ -131,7 +131,7 @@ nav {
   align-items: center;        /* Vertically center content */
   justify-content: flex-start;/* Align content to the left */
   /* Give room on the left so the content doesn't touch the edge */
-  padding: 80px 35% 80px 10%; /* Reduce right padding, increase left padding */
+  padding: 80px 20% 80px 5%; /* Reduce right padding, increase left padding */
   margin: 0;
 
 }
@@ -139,7 +139,7 @@ nav {
 /* Style the hero content box */
 .hero-content {
   /* Keep content readable and on the left */
-  padding: 28px 20px;             /* Space around text */
+  padding: -20px -5px;             /* Space around text */
   border-radius: 12px;            /* Rounded corners */
   max-width: 520px;               /* Limit width so it doesn't stretch too far */
   color: #fff7e1;                 /* Light text for contrast */
@@ -147,10 +147,10 @@ nav {
   text-align: left;               /* Left-align text inside the box */
 }
 
-/* Make the headline bold and modern */
+/* Make the headline modern and clean */
 .hero h1 {
-  font-size: 2.5em;
-  font-weight: bold;
+  font-size: 3.5em;
+  font-weight: normal;     /* Changed from bold to normal */
   letter-spacing: 1px;
   margin-bottom: 15px;
   text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
@@ -165,7 +165,7 @@ nav {
 
 /* Story Section Styles */
 .story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
+  background-color: #ffc907; /* Primary Yellow */
   color: #1a1a1a;
   text-align: center;
   padding: 30px 20px;
@@ -173,7 +173,7 @@ nav {
 
 /* Add accent color to section headings */
 h2 {
-  color: #2E9DF7; /* Primary blue */
+  color: #1a1a1a; /* Black */
   margin-top: 0;
   font-weight: bold;
 }
