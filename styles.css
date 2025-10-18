@@ -45,7 +45,7 @@ body {
 
 /* Add a slight shadow and rounded corners to each section for depth */
 section {
-  background: #fff; /* White background for sections */
+  background: #8BD1CB; /* White background for sections */
   border-radius: 0px; /* Rounded corners */
   box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
   margin: 24px 10px; /* Space between sections */
@@ -87,7 +87,11 @@ nav ul {
 nav a {
   text-decoration: none;
   color: #1a1a1a;
-  font-weight: 500;
+  font-weight: normal;
+}
+
+a:hover {
+  color:   #77a8bb;          /* Light Blue on hover */
 }
 
 /* Navigation positioning */
@@ -165,7 +169,7 @@ nav {
 
 /* Story Section Styles */
 .story {
-  background-color: #ffc907; /* Primary Yellow */
+  background-color:  #ffc907; /* Primary Yellow */
   color: #1a1a1a;
   text-align: center;
   padding: 30px 20px;
@@ -178,18 +182,19 @@ h2 {
   font-weight: bold;
 }
 
-/* Call-to-Action Section Styles */
-.call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
+/* Style the impact story section*/
+.impact-story {
+  background-color:  #8BD1CB; /* Secondary light blue color */
   color: #1a1a1a;
   text-align: center;
   padding: 30px 20px;
 }
 
+
 /* Style the impact story image */
 .impact-image {
   width: 100%;
-  max-width: 320px;
+  max-width: 500px; /*increase to make image larger*/
   border-radius: 10px;
   margin-bottom: 16px;
   box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
