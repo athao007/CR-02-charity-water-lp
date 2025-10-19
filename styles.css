@@ -175,8 +175,18 @@ nav {
   padding: 30px 20px;
 }
 
+.story h2 {
+  color: #1a1a1a; /* Black */
+  font-size: 1.5em;
+}
+
+.story p {
+  color: #1a1a1a; /* Black */
+  font-size: 1.2em;
+}
+
 /* Add accent color to section headings */
-h2 {
+.hero h2 {
   color: #1a1a1a; /* Black */
   margin-top: 0;
   font-weight: bold;
@@ -190,6 +200,15 @@ h2 {
   padding: 30px 20px;
 }
 
+.impact-story h2 {
+  color: #1a1a1a; /* Black */
+  font-size: 1.5em;
+}
+
+.impact-story p {
+  color: #1a1a1a; /* Black */
+  font-size: 1.3em;
+}
 
 /* Style the impact story image */
 .impact-image {
