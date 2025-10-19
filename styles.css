@@ -264,49 +264,10 @@ section {
   margin-bottom: 20px;
 }
 
-/* 
-  Media Queries for Responsive Design
-  Media queries help make your website look good on different screen sizes,
-  like phones (small screens) and computers (large screens).
-*/
-
-/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
-@media (max-width: 600px) {
-  /* Make hero section padding and text size adjust to smaller screens */
-  .hero {
-    min-height: 60vh;      /* Slightly shorter on mobile */
-    padding: 40px 20px;    /* Simpler padding on mobile */
-    background-position: 65% center;  /* Slightly different position for mobile */
-  }
-
-  /* Ensure buttons are appropriately sized and spaced */
-  .donate-button {
-    padding: 10px 18px;
-    font-size: 1em;
-  }
-
-  /* Stack layout for story and call-to-action sections */
-  .story, .call-to-action {
-    padding: 24px 16px;
-  }
-
-  /* Make header even smaller on small screens */
-  header {
-    height: 52px;
-    padding: 0 16px;
-  }
-
-  .logo img {
-    max-height: 32px;
-  }
-}
-
-/* 
+/*
   Accessibility Improvements
   These styles help make the website easier to use for people with disabilities.
 */
-
-/* Ensure sufficient color contrast for readability */
 
 /* Links and buttons should have a clear focus state */
 a:focus, .donate-button:focus {
@@ -326,40 +287,3 @@ button, .donate-button {
   font-size: 1rem;
 }
 
-/* Improve form element styling for consistency and ease of use */
-input, textarea, select {
-  font-family: inherit;
-  font-size: 1rem;
-  padding: 10px;
-  border: 2px solid #cbccd1;
-  border-radius: 8px;
-  margin-top: 8px;
-  width: 100%;
-  max-width: 400px;
-}
-
-/* Focus styles for form elements */
-input:focus, textarea:focus, select:focus {
-  border-color: #FFC907;
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 201, 7, 0.5);
-}
-
-/* 
-  Performance Optimizations
-  These are general best practices to help your CSS perform better.
-*/
-
-/* Minimize the use of large images or complex gradients in favor of solid colors or simple patterns */
-
-/* Use system fonts where possible to reduce load times */
-
-/* Avoid excessive box-shadow or filter effects which can be performance-intensive */
-
-/* Keep CSS rules efficient and avoid unnecessary nesting or complexity */
-
-/* Regularly audit and remove unused CSS rules to keep the stylesheet lean */
-
-/* Consider using CSS variables for commonly used values like colors and fonts for easier maintenance */
-
-/* Use media queries to serve different styles or sizes of images on
