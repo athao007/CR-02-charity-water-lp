@@ -197,6 +197,7 @@ h2 {
   max-width: 500px; /*increase to make image larger*/
   border-radius: 10px;
   margin-bottom: 16px;
+  margin: 10px;
   box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
 }
 
