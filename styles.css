@@ -65,6 +65,7 @@ header {
   top: 0;
   z-index: 1000;
   background-color: #f5f2e8; /* keep the background so it doesn't show hero behind it */
+  font-size:18px;
 }
 
 /* Logo: keep it a bit larger but preserve aspect ratio */
@@ -182,7 +183,7 @@ nav {
 
 .story p {
   color: #1a1a1a; /* Black */
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 /* Add accent color to section headings */
@@ -207,7 +208,7 @@ nav {
 
 .impact-story p {
   color: #1a1a1a; /* Black */
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
 /* Style the impact story image */
